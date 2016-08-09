@@ -2,18 +2,18 @@
  * This template takes a single argument, a String containing a
  * message to display.
  *@
-@(message: String)
+@(section_title: String, simple_list:List[Int])
 
 @*
  * Call the `main` template with two arguments. The first
  * argument is a `String` with the title of the page, the second
  * argument is an `Html` object containing the body of the page.
  *@
-@main("InStore Scala Front End") {
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    <!--@play20.welcome(message, style = "Scala")-->
-    @message
+@main(title="InStore Scala Front End") {
+    <h3>@section_title</h3>
+    <ul>
+    @for(item <- simple_list) {
+        <li>@item</li>
+    }
+    </ul>
 }
