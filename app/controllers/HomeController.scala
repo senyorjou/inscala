@@ -16,4 +16,8 @@ class HomeController @Inject() extends Controller {
     Ok(views.html.index(section_title, simple_list))
   }
 
+  def raw(param: String) = Action { implicit request =>
+    val response = "Response from raw call OK. Text encoding charset is: " + request.charset
+    Ok(response)
+  }
 }

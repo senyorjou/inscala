@@ -4,6 +4,8 @@
 
 # An example controller showing a sample home page
 GET     /               controllers.HomeController.index
+GET     /raw            controllers.HomeController.raw(param: String)
+
 
 # An example controller showing how to use dependency injection
 GET     /count          controllers.CountController.count
